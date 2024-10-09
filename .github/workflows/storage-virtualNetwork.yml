@@ -1,9 +1,9 @@
-name: "storage-account workflow"
+name: "storageAccount-virtualNetwork workflow"
 
 on: workflow_dispatch
 
 jobs:
-  storage-account:
+  storageAccount-virtualNetwork:
     runs-on: ubuntu-latest
 
     steps:
