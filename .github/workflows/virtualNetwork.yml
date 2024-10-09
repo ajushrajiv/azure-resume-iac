@@ -1,9 +1,9 @@
-name: "storage-account workflow"
+name: "virtualNetwork workflow"
 
 on: workflow_dispatch
 
 jobs:
-  storage-account:
+  virtualNetwork:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
         run: terraform init
-        working-directory: ./modules/storage-account
+        working-directory: ./modules/virtualNetwork
 
       - name: Terraform Apply
         env:
@@ -31,4 +31,4 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
         run: terraform apply -auto-approve
-        working-directory: ./modules/storage-account
+        working-directory: ./modules/virtualNetwork
